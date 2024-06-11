@@ -1,0 +1,1 @@
+In this folder you should place your audio dataset. For each `.wav` file, the transcription MUST have the same name but with a `.txt` extension.
