@@ -1,0 +1,5 @@
+# Ignore all data inside /audios/ folder
+/audios/*
+
+# Ignore the venv folder
+/manual_transcriptor
