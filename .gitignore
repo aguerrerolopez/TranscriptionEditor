@@ -7,3 +7,7 @@
 
 # Ignore the venv folder
 /manual_transcriptor
+
+# All built and compiled files
+/build/
+/dist/

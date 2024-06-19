@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Set Audio Directory</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            width: 80%;
+            max-width: 600px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input[type="text"] {
+            margin: 20px 0;
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<script>
+    function openFileDialog() {
+        const input = document.createElement('input');
+        // Print the path to the directory containing audio and text files
+        console.log('Please select the directory containing audio and text files')
+        input.type = 'file';
+        input.webkitdirectory = true;
+        input.onchange = event => {
+            const directoryPath = event.target.files[0].path.split('\\').slice(0, -1).join('\\');
+            console.log("Selected directory: " + directoryPath)
+            document.getElementById('directory').value = directoryPath;
+        };
+        input.click();
+    }
+</script>
+<body>
+
+    <div class="container">
+        <h1>Set Audio Directory</h1>
+        <form action="/set_directory" method="post">
+            <input type="text" id="directory" name="directory" placeholder="Enter the path to the directory containing audio and text files, for example C:\Users\UserA\Downloads\italian_to_correct">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+</body>
+</html>
+
